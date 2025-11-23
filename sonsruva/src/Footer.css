@@ -1,0 +1,256 @@
+/* src/Footer.css */
+
+.footer-container {
+  /* Compact Positioning */
+  width: 95%;
+  max-width: 1000px; /* Reduced max-width for compact look */
+  margin: 0 auto 0 auto;
+  border-radius: 20px 20px 0 0; /* Smaller radius */
+  
+  background: rgba(10, 10, 10, 0.9);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-bottom: none;
+  box-shadow: 0 -5px 30px -5px rgba(0, 0, 0, 0.6);
+  
+  /* Reduced Padding */
+  padding: 25px 0 15px 0; 
+  color: #ffffff;
+  position: relative;
+  z-index: 10;
+  margin-top: auto;
+  font-family: 'Inter', sans-serif;
+}
+
+.footer-content {
+  display: flex;
+  flex-direction: column;
+  padding: 0 20px;
+}
+
+/* --- TOP SECTION --- */
+.footer-top-centered {
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.brand-title {
+  font-size: 1.8rem; /* Reduced size */
+  font-weight: 800;
+  margin: 0 0 5px 0;
+  letter-spacing: -1px;
+  background: linear-gradient(to right, #fff, #a5f3fc);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.brand-statement {
+  color: #94a3b8;
+  font-size: 0.9rem; /* Smaller text */
+  margin: 0 auto;
+}
+
+/* --- DIVIDER --- */
+.horizontal-line {
+  width: 100%;
+  height: 1px;
+  background: rgba(255,255,255,0.1);
+  margin-bottom: 20px;
+}
+
+/* --- BOTTOM SPLIT SECTION --- */
+.footer-split-section {
+  display: flex;
+  justify-content: center;
+  align-items: stretch; /* Stretch to keep line full height */
+  gap: 0;
+}
+
+/* Common Block Styles */
+.split-block {
+  flex: 1;
+  padding: 0 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.block-title {
+  text-transform: uppercase;
+  color: #06b6d4;
+  font-size: 0.8rem;
+  letter-spacing: 1.5px;
+  margin-bottom: 15px;
+  font-weight: 700;
+}
+
+/* --- SERVICES BLOCK (Desktop Only) --- */
+.services-block {
+  display: flex;
+}
+
+.center-align {
+  align-items: center;
+  text-align: center;
+}
+
+/* --- MIDDLE BLOCK --- */
+.middle-align {
+  align-items: center;
+  text-align: center;
+}
+
+/* --- LEFT BLOCK --- */
+.left-align {
+  align-items: flex-end;
+  text-align: right;
+}
+
+.footer-nav-col {
+  display: flex;
+  flex-direction: column;
+  gap: 8px; /* Tighter gaps */
+}
+
+.footer-link {
+  text-decoration: none;
+  color: #cbd5e1;
+  font-size: 0.9rem;
+  transition: all 0.2s;
+}
+
+.footer-link:hover {
+  color: white;
+  transform: translateX(-3px);
+}
+
+/* --- VERTICAL DIVIDER --- */
+.vertical-line {
+  width: 1px;
+  background: rgba(255,255,255,0.15);
+  margin: 0 40px;
+}
+
+/* --- RIGHT BLOCK --- */
+.right-align {
+  align-items: flex-start;
+  text-align: left;
+}
+
+.contact-details p {
+  margin: 0 0 5px 0;
+  color: #cbd5e1;
+  font-size: 0.85rem;
+}
+
+.location-box {
+  display: flex;
+  gap: 8px;
+  margin-top: 10px;
+  color: #94a3b8;
+  font-size: 0.85rem;
+  line-height: 1.3;
+  align-items: flex-start;
+}
+
+.loc-icon {
+  width: 16px;
+  height: 16px;
+  stroke: #06b6d4;
+  flex-shrink: 0;
+}
+
+/* Social Icons */
+.social-row {
+  display: flex;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+.social-icon-box {
+  width: 30px; /* Smaller Icons */
+  height: 30px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.social-svg {
+  width: 14px;
+  height: 14px;
+  stroke: #cbd5e1;
+}
+
+.social-icon-box:hover {
+  background: #06b6d4;
+  border-color: #06b6d4;
+}
+.social-icon-box:hover .social-svg {
+  stroke: white;
+}
+
+/* --- COPYRIGHT --- */
+.copyright-bar {
+  text-align: center;
+  margin-top: 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  padding-top: 10px;
+  color: #555;
+  font-size: 0.75rem;
+}
+
+/* --- MOBILE RESPONSIVENESS --- */
+@media (max-width: 768px) {
+  .footer-container {
+    width: 100%;
+    border-radius: 15px 15px 0 0;
+    padding: 30px 0 25px 0;
+    min-height: 200px;
+  }
+
+  .footer-content {
+    padding: 0 10px;
+  }
+
+  /* Hide Services block on mobile */
+  .services-block {
+    display: none;
+  }
+
+  /* Force Side-by-Side on Mobile */
+  .footer-split-section {
+    flex-direction: row; /* KEEP ROW */
+    justify-content: space-between;
+  }
+
+  .split-block {
+    padding: 0 10px; /* Minimal padding */
+  }
+
+  /* Hide vertical dividers on mobile for cleaner look */
+  .vertical-line:first-of-type {
+    display: none;
+  }
+
+  /* Scale down font sizes for mobile */
+  .block-title {
+    font-size: 0.7rem;
+    margin-bottom: 10px;
+  }
+  
+  .footer-link, .contact-details p, .location-box span {
+    font-size: 0.75rem;
+  }
+  
+  /* Hide the location icon on super small screens to save space if needed */
+  .loc-icon {
+    width: 14px;
+    height: 14px;
+  }
+}
