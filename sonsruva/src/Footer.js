@@ -7,21 +7,17 @@ const Footer = () => {
     <footer className="footer-container">
       <div className="footer-content">
         
-        {/* --- TOP SECTION: Compact Header --- */}
         <div className="footer-top-centered">
-            <h2 className="brand-title">SonSruVa</h2>
+            <h2 className="brand-title">SonShruVa</h2>
             <p className="brand-statement">
                 Empowering your financial future. Complexity made simple.
             </p>
         </div>
 
-        {/* --- HORIZONTAL DIVIDER --- */}
         <div className="horizontal-line"></div>
 
-        {/* --- BOTTOM SECTION: Side-by-Side Columns --- */}
         <div className="footer-split-section">
             
-            {/* LEFT BLOCK: Explore */}
             <div className="split-block left-align">
                 <h3 className="block-title">Explore</h3>
                 <nav className="footer-nav-col">
@@ -32,20 +28,20 @@ const Footer = () => {
                 </nav>
             </div>
 
-            {/* VERTICAL DIVIDER */}
             <div className="vertical-line"></div>
 
-            {/* RIGHT BLOCK: Connect */}
             <div className="split-block right-align">
                 <h3 className="block-title">Connect</h3>
                 
                 <div className="contact-details">
-                    <p>+91 98765 43210</p>
-                    <p>support@sonsruva.com</p>
+                    <p>+91 9398989401</p>
+                    <p>+91 9912738248</p>
+                    <p>+91  8125622302</p>
+                    <p>sonshruva@gmail.com</p>
                     
                     <div className="location-box">
                         <svg className="loc-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
-                        <span>Hitech City, Hyd</span>
+                        <span>Hyderabad, Mahabubnagar</span>
                     </div>
                 </div>
 
@@ -62,7 +58,7 @@ const Footer = () => {
 
       {/* Copyright Bar */}
       <div className="copyright-bar">
-        © {new Date().getFullYear()} SonSruVa. All rights reserved.
+        © {new Date().getFullYear()} SonShruVa. All rights reserved.
       </div>
     </footer>
   );

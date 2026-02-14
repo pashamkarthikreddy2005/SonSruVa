@@ -1,25 +1,50 @@
-/* src/Navbar.css */
-
-/* --- Main Container --- */
 .navbar {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-  height: 80px;
+  height: 70px;
   z-index: 50;
   display: flex;
   align-items: center;
   justify-content: flex-start; 
   padding: 0 50px;
-  background: rgba(255, 255, 255, 0.05);
-  backdrop-filter: blur(10px);
+  
+  background: #0a0a0a; /* You can change this to #000000 for pure black */
+  
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   box-sizing: border-box;
   font-family: 'Inter', sans-serif;
 }
+/* src/Navbar.css */
 
-/* --- Logo --- */
+/* ... keep your existing .navbar styles ... */
+
+/* THE FIX: Add this new class to align image and text side-by-side */
+.logo-link {
+  display: flex;
+  align-items: center; /* Centers them vertically */
+  text-decoration: none;
+  color: white;
+  gap: 12px; /* Adds space between the logo icon and the text */
+}
+
+/* THE FIX: Updated image styles */
+.logo-image {
+  height: 50px; /* A good height for the navbar */
+  width: auto;  /* Important: ensures the image keeps its proportions */
+  object-fit: contain; /* Prevents squishing */
+}
+
+.nav-logo {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: white;
+  letter-spacing: 1px;
+  white-space: nowrap;
+  z-index: 51;
+}
+
 .nav-logo {
   font-size: 1.5rem;
   font-weight: 800;
@@ -30,7 +55,6 @@
   z-index: 51;
 }
 
-/* --- Menu (Desktop Style: Absolute Center) --- */
 .nav-menu {
   position: absolute;
   left: 50%;
@@ -42,47 +66,42 @@
   padding: 0;
 }
 
-/* --- Links --- */
 .nav-link {
   text-decoration: none;
-  color: rgba(255, 255, 255, 0.6); /* Dimmed by default */
-  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 0.92rem;
   font-weight: 500;
   transition: color 0.3s ease;
-  position: relative; /* Needed for the line positioning */
-  padding-bottom: 5px; /* Space between text and line */
+  position: relative;
+  padding-bottom: 5px;
 }
 
-/* The Underline Animation Element */
 .nav-link::after {
   content: '';
   position: absolute;
-  width: 0; /* Hidden by default */
+  width: 0;
   height: 2px;
   bottom: 0;
   left: 0;
-  background-color: #06b6d4; /* Cyan Accent */
+  background-color: #06b6d4;
   transition: width 0.3s ease;
 }
 
-/* --- HOVER STATE --- */
 .nav-link:hover {
   color: #ffffff;
 }
 .nav-link:hover::after {
-  width: 100%; /* Full width on hover */
+  width: 100%;
 }
 
-/* --- ACTIVE STATE (The Page You Are On) --- */
 .nav-link.active {
-  color: #ffffff; /* Bright white text */
+  color: #ffffff;
 }
 .nav-link.active::after {
-  width: 100%; /* Keep the line visible permanently */
-  box-shadow: 0 0 10px #06b6d4; /* Optional: Add a glow to the active line */
+  width: 100%;
+  box-shadow: 0 0 10px #06b6d4;
 }
 
-/* --- MOBILE TWEAKS --- */
 @media (max-width: 768px) {
   .navbar {
     padding: 0 20px;

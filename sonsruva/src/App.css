@@ -28,14 +28,12 @@
   color: #61dafb;
 }
 body {
-  
   margin: 0;
-  background-color: #000000; /* Pure black makes the sphere pop */
-  overflow: hidden;
-  font-family: 'Inter', sans-serif;
-  margin: 0;
+  background-color: #000000; 
   background: radial-gradient(circle at 50% 50%, #171717 0%, #000000 100%);
+  
   overflow-x: hidden;
+  
   font-family: 'Inter', sans-serif;
 }
 @keyframes App-logo-spin {

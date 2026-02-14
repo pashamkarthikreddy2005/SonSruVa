@@ -6,9 +6,9 @@ import StarBackground from './StarBackground';
 import Navbar from './Navbar';
 import Footer from './Footer';
 import Home from './Home';
-
-// src/App.js
-// ... imports ...
+import Services from './Services';
+import AboutUs from './AboutUs';
+import Contact from './Contact';
 
 function App() {
   return (
@@ -17,9 +17,13 @@ function App() {
         
         <StarBackground />
         <Navbar />
-        <main style={{ flex: 1 }}>
+        <main style={{ flex: 1, display: 'flex', flexDirection: 'column' }}>
           <Routes>
             <Route path="/home" element={<Home />} />
+            <Route path="" element={<Home />} />
+            <Route path="/services" element={<Services />} />
+            <Route path="/about" element={<AboutUs />} />
+            <Route path="/contact" element={<Contact />} />
           </Routes>
         </main>
 

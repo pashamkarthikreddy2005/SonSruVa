@@ -1,36 +1,33 @@
 // src/Navbar.js
 import React from 'react';
-import { Link, useLocation } from 'react-router-dom'; // <--- Import useLocation
+import { Link, useLocation } from 'react-router-dom';
 import './Navbar.css';
 
 const Navbar = () => {
-  const location = useLocation(); // Gets the current URL info
-  const navLinks = ['Home', 'About', 'Contact'];
+  const location = useLocation();
+  const navLinks = ['Home', 'Services', 'About', 'Contact'];
 
   return (
     <nav className="navbar">
       
-      {/* Logo */}
       <div className="nav-logo">
-        <Link to="/" style={{ textDecoration: 'none', color: 'white' }}>
-            SonSruVa
+        {/* THE FIX: Removed inline styles and added className="logo-link" */}
+        <Link to="/" className="logo-link">
+            {/* Ensure your image path is correct, e.g., /logo.png or /logo.jpeg */}
+            <img src="/logo.jpeg" alt="SonShruVa Logo" className="logo-image" />
+            <span className="logo-text">SonShruVa</span>
         </Link>
       </div>
 
-      {/* Menu Links */}
       <ul className="nav-menu">
         {navLinks.map((item) => {
-          // Calculate the path for this item
           const path = item === 'Home' ? '/' : `/${item.toLowerCase()}`;
-          
-          // Check if this is the active page
           const isActive = location.pathname === path;
 
           return (
             <li key={item}>
               <Link 
                 to={path} 
-                // Add the 'active' class if the paths match
                 className={`nav-link ${isActive ? 'active' : ''}`}
               >
                 {item}
