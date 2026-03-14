@@ -7,63 +7,46 @@
   z-index: 50;
   display: flex;
   align-items: center;
-  justify-content: flex-start; 
+  justify-content: flex-start;
   padding: 0 50px;
-  
-  background: #0a0a0a; /* You can change this to #000000 for pure black */
-  
+  background: #0a0a0a;
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   box-sizing: border-box;
   font-family: 'Inter', sans-serif;
 }
-/* src/Navbar.css */
 
-/* ... keep your existing .navbar styles ... */
-
-/* THE FIX: Add this new class to align image and text side-by-side */
+/* ── Logo ── */
 .logo-link {
   display: flex;
-  align-items: center; /* Centers them vertically */
+  align-items: center;
   text-decoration: none;
   color: white;
-  gap: 12px; /* Adds space between the logo icon and the text */
+  gap: 12px;
+  flex-shrink: 0;
 }
 
-/* THE FIX: Updated image styles */
 .logo-image {
-  height: 50px; /* A good height for the navbar */
-  width: auto;  /* Important: ensures the image keeps its proportions */
-  object-fit: contain; /* Prevents squishing */
+  height: 44px;
+  width: auto;
+  object-fit: contain;
 }
 
-.nav-logo {
-  font-size: 1.5rem;
+.logo-text {
+  font-size: 1.4rem;
   font-weight: 800;
   color: white;
   letter-spacing: 1px;
   white-space: nowrap;
-  z-index: 51;
 }
 
-.nav-logo {
-  font-size: 1.5rem;
-  font-weight: 800;
-  color: white;
-  letter-spacing: 1px;
-  text-decoration: none;
-  white-space: nowrap;
-  z-index: 51;
-}
-
+/* ── Nav links ── */
 .nav-menu {
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
   display: flex;
   list-style: none;
-  gap: 40px;
-  margin: 0;
+  gap: 60px;
+  margin: 0 0 0 300px;
   padding: 0;
+  flex-shrink: 0;
 }
 
 .nav-link {
@@ -74,6 +57,7 @@
   transition: color 0.3s ease;
   position: relative;
   padding-bottom: 5px;
+  white-space: nowrap;
 }
 
 .nav-link::after {
@@ -87,35 +71,48 @@
   transition: width 0.3s ease;
 }
 
-.nav-link:hover {
-  color: #ffffff;
-}
-.nav-link:hover::after {
-  width: 100%;
-}
+.nav-link:hover { color: #ffffff; }
+.nav-link:hover::after { width: 100%; }
 
-.nav-link.active {
-  color: #ffffff;
-}
+.nav-link.active { color: #ffffff; }
 .nav-link.active::after {
   width: 100%;
   box-shadow: 0 0 10px #06b6d4;
 }
 
+/* ── Tablet ── */
+@media (max-width: 1024px) {
+  .navbar { padding: 0 32px; }
+  .nav-menu { gap: 28px; margin-left: 60px; } /* ← reset */
+  .logo-text { font-size: 1.2rem; }
+  .logo-image { height: 38px; }
+}
+
+/* ── Small tablet ── */
 @media (max-width: 768px) {
-  .navbar {
-    padding: 0 20px;
-    justify-content: space-between;
-  }
-  .nav-logo {
-    font-size: 1.2rem;
-  }
-  .nav-menu {
-    position: static; 
-    transform: none;
-    gap: 15px;
-  }
-  .nav-link {
-    font-size: 0.9rem;
-  }
+  .navbar { padding: 0 20px; height: 62px; }
+  .nav-menu { gap: 18px; margin-left: 24px; } /* ← reset */
+  .nav-link { font-size: 0.85rem; }
+  .logo-text { font-size: 1.05rem; }
+  .logo-image { height: 34px; }
+  .logo-link { gap: 8px; }
+}
+
+/* ── Large phone ── */
+@media (max-width: 540px) {
+  .navbar { padding: 0 14px; height: 56px; }
+  .nav-menu { gap: 15px; margin-left: 35px; } /* ← reset */
+  .nav-link { font-size: 0.78rem; }
+  .logo-text { font-size: 0.92rem; letter-spacing: 0.5px; }
+  .logo-image { height: 30px; }
+  .logo-link { gap: 6px; }
+}
+
+/* ── Small phone ── */
+@media (max-width: 380px) {
+  .navbar { padding: 0 10px; height: 52px; }
+  .nav-menu { gap: 8px; margin-left: 10px; } /* ← reset */
+  .nav-link { font-size: 0.72rem; }
+  .logo-text { display: none; }
+  .logo-image { height: 28px; }
 }

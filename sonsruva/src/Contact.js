@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import emailjs from '@emailjs/browser';
 import './Contact.css';
 
@@ -15,14 +15,17 @@ const Contact = () => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
+  useEffect(() => {
+  window.scrollTo({ top: 0, behavior: 'instant' });
+}, []);
+
   const handleSubmit = (e) => {
     e.preventDefault();
     setIsSending(true);
 
-    // REPLACE THESE WITH YOUR ACTUAL EMAILJS IDs
-    const serviceId = 'YOUR_SERVICE_ID'; 
-    const templateId = 'YOUR_TEMPLATE_ID';
-    const publicKey = 'YOUR_PUBLIC_KEY';
+    const serviceId = 'service_mvj9ooe'; 
+    const templateId = 'template_wtiuv8o';
+    const publicKey = 'aZ3pY2unVIh0T8K7Z';
 
     emailjs.sendForm(serviceId, templateId, formRef.current, publicKey)
       .then((result) => {
@@ -87,7 +90,7 @@ const Contact = () => {
                 type="text" 
                 id="name" 
                 name="name"
-                placeholder="name"
+                placeholder="Name"
                 value={formData.name}
                 onChange={handleChange}
                 required 
@@ -95,12 +98,12 @@ const Contact = () => {
             </div>
 
             <div className="input-group">
-              <label htmlFor="email">Email Address</label>
+              <label htmlFor="email">Your email Address</label>
               <input 
                 type="email" 
                 id="email" 
                 name="email"
-                placeholder="email address"
+                placeholder="Your email address"
                 value={formData.email}
                 onChange={handleChange}
                 required 
