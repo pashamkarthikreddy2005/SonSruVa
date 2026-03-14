@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useState, useRef, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import './Services.css';
 
 const servicesData = [
@@ -21,19 +22,42 @@ const servicesData = [
 ];
 
 const Services = () => {
+  const navigate = useNavigate();
+  const cardRefs = useRef([]);
+
+  useEffect(() => {
+    const savedIndex = sessionStorage.getItem('servicesScrollIndex');
+    if (savedIndex !== null) {
+      const index = parseInt(savedIndex);
+      setTimeout(() => {
+        cardRefs.current[index]?.scrollIntoView({ behavior: 'instant', block: 'center' }); // ← fixed
+      }, 100);
+      sessionStorage.removeItem('servicesScrollIndex');
+    }
+  }, []);
+
+  const handleCardClick = (index) => {
+    sessionStorage.setItem('servicesScrollIndex', index);
+    navigate('/contact');
+  };
+
   return (
     <div className="services-page">
       <div className="services-header">
         <h1 className="services-title">Our Services</h1>
         <p className="services-subtitle">Comprehensive financial and compliance solutions for individuals and businesses.</p>
       </div>
-      
+
       <div className="services-grid">
         {servicesData.map((service, index) => (
-          <div className="service-card" key={index}>
+          <div
+            className="service-card"
+            key={index}
+            ref={(el) => (cardRefs.current[index] = el)}
+            onClick={() => handleCardClick(index)}
+          >
             <div className="service-icon-wrapper">
-              {/* Formats numbers as 01, 02, etc. */}
-              <span className="service-number"></span> 
+              <span className="service-number"></span>
             </div>
             <h3 className="service-card-title">{service.title}</h3>
             <p className="service-card-desc">{service.description}</p>
