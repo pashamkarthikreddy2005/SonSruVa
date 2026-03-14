@@ -111,8 +111,9 @@
 /* ── Small phone ── */
 @media (max-width: 380px) {
   .navbar { padding: 0 10px; height: 52px; }
-  .nav-menu { gap: 8px; margin-left: 10px; } /* ← reset */
-  .nav-link { font-size: 0.72rem; }
-  .logo-text { display: none; }
-  .logo-image { height: 28px; }
+  .nav-menu { gap: 8px; margin-left: 10px; }
+  .nav-link { font-size: 0.68rem; }
+  .logo-text { font-size: 0.75rem; letter-spacing: 0; } /* ← removed display:none */
+  .logo-image { height: 26px; }
+  .logo-link { gap: 5px; }
 }
