@@ -43,14 +43,6 @@ const testimonials = [
       'From incorporation to GST registration to monthly bookkeeping — SonShruVa has been our one-stop partner. They feel less like a service and more like a co-founder.',
     avatar: 'https://api.dicebear.com/7.x/initials/svg?seed=Arjun%20Mehta&backgroundColor=0e7490&textColor=ffffff',
   },
-  {
-    name: 'Deepika Rao',
-    role: 'NRI Investor',
-    rating: 4.5,
-    feedback:
-      'Managing NRI taxation and FEMA compliance seemed daunting, but the team handled everything expertly. Their responsiveness across time zones is impressive.',
-    avatar: 'https://api.dicebear.com/7.x/initials/svg?seed=Deepika%20Rao&backgroundColor=0e7490&textColor=ffffff',
-  },
 ];
 
 // Renders up to 5 stars supporting full, half, and empty states
