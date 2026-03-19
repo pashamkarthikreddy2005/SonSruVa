@@ -195,6 +195,21 @@
   stroke: white;
 }
 
+/* --- SOCIAL ICON ANCHOR WRAPPER --- */
+.social-row a {
+  text-decoration: none;
+  display: flex;
+}
+
+.social-row a:hover .social-icon-box {
+  background: #06b6d4;
+  border-color: #06b6d4;
+}
+
+.social-row a:hover .social-svg {
+  stroke: white;
+}
+
 .copyright-bar {
   text-align: center;
   margin-top: 20px;
